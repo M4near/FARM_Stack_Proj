@@ -13,7 +13,7 @@ from database import(
     remove_todo,
 )
 
-origins = ['https://localhost:3000']
+origins = ['http://localhost:3000']
 
 app.add_middleware(
     CORSMiddleware,
@@ -54,7 +54,7 @@ async def put_todo(title:str, desc:str):
         return response
     raise HTTPException(400, "Something went wrong / Bad Request")
 
-@app.delete("/api/todo{title}")
+@app.delete("/api/todo/{title}")
 async def delete_todo(title):
     response = await remove_todo(title)
     if response:

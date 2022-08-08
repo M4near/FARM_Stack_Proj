@@ -16,6 +16,7 @@ useEffect(() => {
   .then(res => {
     setTodoList(res.data)
   })
+  // can add [] after closing } so that it does not have an infinite loop
 });
 
 // Post a todo
